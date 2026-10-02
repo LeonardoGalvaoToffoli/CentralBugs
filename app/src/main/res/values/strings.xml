@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">CentralBugs</string>
+    <string name="app_subtitle">Sua central de falhas</string>
+    <string name="app_icon_description">Símbolo da CentralBugs</string>
+    <string name="form_title">Registrar um problema</string>
+    <string name="bug_title_hint">Título do bug</string>
+    <string name="bug_module_hint">Módulo ou tela</string>
+    <string name="bug_description_hint">Descrição do erro</string>
+    <string name="gravidade_valor">Gravidade: %1$d de 5</string>
+    <string name="gravidade_description">Gravidade do bug, de 1 a 5</string>
+    <string name="register_bug">Registrar bug</string>
+    <string name="total_label">Total</string>
+    <string name="open_label">Abertos</string>
+    <string name="resolved_label">Corrigidos</string>
+    <string name="score_label">Pontos</string>
+    <string name="initial_counter">0</string>
+    <string name="bugs_list_title">Bugs registrados</string>
+    <string name="empty_list_message">Nenhum bug registrado. O sistema parece perfeito... por enquanto!</string>
+    <string name="error_title_required">Informe o título do problema.</string>
+    <string name="error_module_required">Informe o módulo ou a tela.</string>
+    <string name="error_description_short">A descrição deve ter pelo menos dez caracteres.</string>
+    <string name="bug_module_value">Módulo: %1$s</string>
+    <string name="bug_severity_value">Gravidade %1$d · %2$s</string>
+    <string name="severity_low">Baixa</string>
+    <string name="severity_medium">Média</string>
+    <string name="severity_high">Alta</string>
+    <string name="severity_critical">Crítica</string>
+    <string name="status_open_text">Aberto</string>
+    <string name="status_resolved_text">Corrigido</string>
+    <string name="bug_image_description">Ícone do bug %1$s</string>
+    <string name="bug_removed">Bug %1$s removido.</string>
+    <string name="counter_value">%1$d</string>
+</resources>

@@ -1,0 +1,15 @@
+<resources>
+    <color name="brand_primary">#B6C4FF</color>
+    <color name="on_brand_primary">#152668</color>
+    <color name="screen_background">#101727</color>
+    <color name="surface_background">#1C263A</color>
+    <color name="text_primary">#EDF1FF</color>
+    <color name="text_secondary">#B6C1D8</color>
+    <color name="field_border">#596985</color>
+    <color name="status_open">#FFBE7C</color>
+    <color name="status_resolved">#7DDBAE</color>
+    <color name="severity_low">#7DDBAE</color>
+    <color name="severity_medium">#F1CD75</color>
+    <color name="severity_high">#FFABB3</color>
+    <color name="resolved_background">#17362B</color>
+</resources>

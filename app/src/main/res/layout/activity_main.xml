@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+    <ImageView
+        android:id="@+id/imageAppLogo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="@string/app_icon_description"
+        android:src="@drawable/ic_bug"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textAppTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="@string/app_name"
+        android:textColor="@color/text_primary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/imageAppLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageAppLogo" />
+    <TextView
+        android:id="@+id/textAppSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/app_subtitle"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/textAppTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textAppTitle" />
+    <ScrollView
+        android:id="@+id/scrollBugForm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:scrollbars="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textAppSubtitle">
+        <LinearLayout
+            android:id="@+id/formBug"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textFormTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/form_title"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/inputBugTitle"
+                    style="@style/BugInput"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:hint="@string/bug_title_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences"
+                    android:maxLines="1" />
+                <EditText
+                    android:id="@+id/inputBugModule"
+                    style="@style/BugInput"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/bug_module_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences"
+                    android:maxLines="1" />
+            </LinearLayout>
+            <EditText
+                android:id="@+id/inputBugDescription"
+                style="@style/BugInput"
+                android:layout_height="64dp"
+                android:layout_marginTop="6dp"
+                android:gravity="top|start"
+                android:hint="@string/bug_description_hint"
+                android:inputType="textMultiLine|textCapSentences" />
+            <TextView
+                android:id="@+id/textGravidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                tools:text="Gravidade: 1 de 5" />
+            <SeekBar
+                android:id="@+id/seekGravidade"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:contentDescription="@string/gravidade_description"
+                android:max="5"
+                android:min="1"
+                android:progress="1"
+                android:progressTint="@color/brand_primary"
+                android:thumbTint="@color/brand_primary" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonRegisterBug"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="@string/register_bug" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/panelCounters"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_panel"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollBugForm">
+        <LinearLayout
+            style="@style/CounterColumn">
+            <TextView
+                android:id="@+id/textTotalBugs"
+                style="@style/CounterValue" />
+            <TextView
+                style="@style/CounterLabel"
+                android:text="@string/total_label" />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CounterColumn">
+            <TextView
+                android:id="@+id/textOpenBugs"
+                style="@style/CounterValue"
+                android:textColor="@color/status_open" />
+            <TextView
+                style="@style/CounterLabel"
+                android:text="@string/open_label" />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CounterColumn">
+            <TextView
+                android:id="@+id/textResolvedBugs"
+                style="@style/CounterValue"
+                android:textColor="@color/status_resolved" />
+            <TextView
+                style="@style/CounterLabel"
+                android:text="@string/resolved_label" />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CounterColumn">
+            <TextView
+                android:id="@+id/textHunterScore"
+                style="@style/CounterValue"
+                android:textColor="@color/brand_primary" />
+            <TextView
+                style="@style/CounterLabel"
+                android:text="@string/score_label" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textBugsListTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/bugs_list_title"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/panelCounters" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerBugs"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textBugsListTitle"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    <TextView
+        android:id="@+id/textEmptyBugs"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/empty_list_message"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/recyclerBugs"
+        app:layout_constraintEnd_toEndOf="@id/recyclerBugs"
+        app:layout_constraintTop_toTopOf="@id/recyclerBugs"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerBugs" />
+</androidx.constraintlayout.widget.ConstraintLayout>
